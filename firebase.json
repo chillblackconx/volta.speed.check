@@ -1,0 +1,25 @@
+{
+  "hosting": {
+    "public": "public", // Assurez-vous que c'est le bon dossier
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    // Redirige toutes les requêtes vers index.html si non trouvées
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    // Redirige spécifiquement le résultat pour une URL propre
+    "redirects": [
+      {
+        "source": "/results",
+        "destination": "/results.html",
+        "type": 302
+      }
+    ]
+  }
+}
