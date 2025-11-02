@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Résultats d'Analyse - Volta Speed Index</title>
     <link rel="stylesheet" href="style.css">
+    
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
     <header>
@@ -15,40 +15,82 @@
     </header>
 
     <main class="results-page-futuristic">
-        <div class="kinetic-bg"></div> <div class="results-container">
+        <div class="kinetic-bg"></div> 
+        <div class="results-container">
             <h1>Analyse de Performance pour <span id="analyzedUrl" class="url-display"></span></h1>
-            <p class="summary-message" id="summaryMessage"></p>
+            <p class="summary-message fade-in" id="summaryMessage"></p>
 
-            <div class="metrics-dashboard">
+            <div class="metrics-dashboard fade-in">
                 <div class="metric-panel">
                     <h3>VITESSE (LCP)</h3>
                     <div class="score-display">
                         <span class="score-value" id="speedScoreValue">0</span><span class="score-unit">%</span>
-                        <div class="score-bar" id="speedScoreBar"></div>
                     </div>
+                    <div class="score-bar" id="speedScoreBar"></div>
                     <p class="metric-description">Temps de chargement du contenu principal.</p>
                 </div>
-
                 <div class="metric-panel">
                     <h3>ACCESSIBILITÉ</h3>
                     <div class="score-display">
                         <span class="score-value" id="accessibilityScoreValue">0</span><span class="score-unit">%</span>
-                        <div class="score-bar" id="accessibilityScoreBar"></div>
                     </div>
+                    <div class="score-bar" id="accessibilityScoreBar"></div>
                     <p class="metric-description">Facilité d'utilisation pour tous les utilisateurs.</p>
                 </div>
-
                 <div class="metric-panel">
                     <h3>BEST PRACTICES</h3>
                     <div class="score-display">
                         <span class="score-value" id="bestPracticesScoreValue">0</span><span class="score-unit">%</span>
-                        <div class="score-bar" id="bestPracticesScoreBar"></div>
                     </div>
+                    <div class="score-bar" id="bestPracticesScoreBar"></div>
                     <p class="metric-description">Conformité aux standards de développement moderne.</p>
                 </div>
             </div>
 
-            <div class="action-zone">
+            <div class="cpm-section fade-in">
+                <h2>🎯 CHARGEMENTS POTENTIELS PAR MINUTE (CPM)</h2>
+                <div class="cpm-card" id="cpmCard">
+                    <span class="cpm-value" id="cpmValue">0</span>
+                    <span class="cpm-unit">Loads/min</span>
+                </div>
+                <p class="cpm-fix-detail" id="cpmFix">...</p>
+            </div>
+
+            <div class="data-grid-section fade-in">
+                <h2>MÉTRIQUES DÉTAILLÉES & DIAGNOSTIC DEV</h2>
+                <div class="data-grid">
+                    <div class="data-card data-card-dev" id="fcpCard">
+                        <p class="data-label">FCP (First Contentful Paint)</p>
+                        <p class="data-value" id="fcpValue">...</p>
+                        <p class="data-unit">sec</p>
+                        <p class="fix-label">FIX:</p>
+                        <p class="fix-detail" id="fcpFix">...</p>
+                    </div>
+                    <div class="data-card data-card-dev" id="lcpCard">
+                        <p class="data-label">LCP (Largest Contentful Paint)</p>
+                        <p class="data-value" id="lcpValue">...</p>
+                        <p class="data-unit">sec</p>
+                        <p class="fix-label">FIX:</p>
+                        <p class="fix-detail" id="lcpFix">...</p>
+                    </div>
+                    <div class="data-card data-card-dev" id="tbtCard">
+                        <p class="data-label">TBT (Total Blocking Time)</p>
+                        <p class="data-value" id="tbtValue">...</p>
+                        <p class="data-unit">ms</p>
+                        <p class="fix-label">FIX:</p>
+                        <p class="fix-detail" id="tbtFix">...</p>
+                    </div>
+                    <div class="data-card data-card-dev" id="ttiCard">
+                        <p class="data-label">TTI (Time To Interactive)</p>
+                        <p class="data-value" id="ttiValue">...</p>
+                        <p class="data-unit">sec</p>
+                        <p class="fix-label">FIX:</p>
+                        <p class="fix-detail" id="ttiFix">...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-zone fade-in">
                 <a href="/" class="back-button">← Nouvelle Analyse</a>
                 <div class="cta-section-futuristic">
                     <h3>Besoin d'optimisation ?</h3>
@@ -60,14 +102,13 @@
     </main>
 
     <footer>
-        &copy; 2025 Volta Tech - all rignt reserved
+        &copy; 2025 Volta Tech - Studio de Création Web
     </footer>
 
     <script src="script.js"></script>
     <script>
-        // Fonction spécifique à la page de résultats
         document.addEventListener('DOMContentLoaded', () => {
-            if (document.querySelector('.results-page-futuristic')) { // S'assure d'être sur la bonne page
+            if (document.querySelector('.results-page-futuristic')) {
                 displayResultsFuturistic();
             }
         });
