@@ -1,12 +1,12 @@
 {
   "hosting": {
-    "public": "public", // Assurez-vous que c'est le bon dossier
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    // Redirige toutes les requêtes vers index.html si non trouvées
+    // Redirige toutes les requêtes vers index.html si non trouvées (SPA fallback)
     "rewrites": [
       {
         "source": "**",
