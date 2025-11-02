@@ -3,57 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volta Speed Index - L'énergie de votre présence en ligne</title>
+    <title>Résultats d'Analyse - Volta Speed Index</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png"> 
-    <link rel="icon" type="image/x-icon" href="favicon.ico"> </head>
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
     <header>
         <div class="logo">VOLTA TECH</div>
     </header>
 
-    <main class="results-page">
-        <h2>⚡ Résultats de l'Analyse pour <span id="analyzedUrl" class="url-display"></span></h2>
-        <p class="summary-message" id="summaryMessage"></p>
+    <main class="results-page-futuristic">
+        <div class="kinetic-bg"></div> <div class="results-container">
+            <h1>Analyse de Performance pour <span id="analyzedUrl" class="url-display"></span></h1>
+            <p class="summary-message" id="summaryMessage"></p>
 
-        <div class="metrics-grid">
-            <div class="metric-card">
-                <h3>Vitesse (LCP)</h3>
-                <div class="gauge" id="speedGauge">0%</div>
-                <p>Temps de chargement du contenu principal.</p>
+            <div class="metrics-dashboard">
+                <div class="metric-panel">
+                    <h3>VITESSE (LCP)</h3>
+                    <div class="score-display">
+                        <span class="score-value" id="speedScoreValue">0</span><span class="score-unit">%</span>
+                        <div class="score-bar" id="speedScoreBar"></div>
+                    </div>
+                    <p class="metric-description">Temps de chargement du contenu principal.</p>
+                </div>
+
+                <div class="metric-panel">
+                    <h3>ACCESSIBILITÉ</h3>
+                    <div class="score-display">
+                        <span class="score-value" id="accessibilityScoreValue">0</span><span class="score-unit">%</span>
+                        <div class="score-bar" id="accessibilityScoreBar"></div>
+                    </div>
+                    <p class="metric-description">Facilité d'utilisation pour tous les utilisateurs.</p>
+                </div>
+
+                <div class="metric-panel">
+                    <h3>BEST PRACTICES</h3>
+                    <div class="score-display">
+                        <span class="score-value" id="bestPracticesScoreValue">0</span><span class="score-unit">%</span>
+                        <div class="score-bar" id="bestPracticesScoreBar"></div>
+                    </div>
+                    <p class="metric-description">Conformité aux standards de développement moderne.</p>
+                </div>
             </div>
 
-            <div class="metric-card">
-                <h3>Accessibilité</h3>
-                <div class="gauge" id="accessibilityGauge">0%</div>
-                <p>Facilité d'utilisation pour tous les utilisateurs.</p>
+            <div class="action-zone">
+                <a href="/" class="back-button">← Nouvelle Analyse</a>
+                <div class="cta-section-futuristic">
+                    <h3>Besoin d'optimisation ?</h3>
+                    <p>Contactez **Volta Tech** pour transformer ces données en résultats concrets.</p>
+                    <a href="#" class="cta-button-futuristic">Demander un Audit Approfondi</a>
+                </div>
             </div>
-
-            <div class="metric-card">
-                <h3>Meilleures Pratiques</h3>
-                <div class="gauge" id="bestPracticesGauge">0%</div>
-                <p>Conformité aux standards modernes.</p>
-            </div>
-        </div>
-
-        <div class="cta-section">
-            <h3>Votre site peut faire mieux ?</h3>
-            <p>Obtenez un audit gratuit et détaillé par **Volta Tech** pour corriger ces problèmes et augmenter votre croissance.</p>
-            <a href="#" class="cta-button">Demander un Audit Gratuit</a>
         </div>
     </main>
 
     <footer>
-        &copy; 2025 Volta Tech - Studio de Création Web
+        &copy; 2025 Volta Tech - all rignt reserved
     </footer>
 
     <script src="script.js"></script>
     <script>
-        // Fonction spécifique à la page de résultats (doit être après le script principal)
+        // Fonction spécifique à la page de résultats
         document.addEventListener('DOMContentLoaded', () => {
-            displayResults();
+            if (document.querySelector('.results-page-futuristic')) { // S'assure d'être sur la bonne page
+                displayResultsFuturistic();
+            }
         });
     </script>
 </body>
